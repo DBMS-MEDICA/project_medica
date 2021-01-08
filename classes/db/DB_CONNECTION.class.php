@@ -2,7 +2,7 @@
 
 class DB_CONNECTION extends PDO
 {
-    private static $mydb = "
+    private $mydb = "
 (DESCRIPTION =
 (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
 (CONNECT_DATA =
@@ -20,7 +20,8 @@ class DB_CONNECTION extends PDO
         ];
 
         try {
-            $this->conn = new PDO("oci:dbname=" . $this->mydb, $username, $password, $opt);
+            parent::__construct("oci:dbname=" . $this->mydb, $username, $password, $opt);
+            $this->conn = $this;
         } catch (PDOException $e) {
             echo ($e->getMessage());
         }

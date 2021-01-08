@@ -9,6 +9,13 @@
   ______
 
   ## REST API
-  + Make backend controller routes with parameterized queries
+  + PHP set/unset sessions
+  + Implement logout in dashboard
   + Modify frontend JS requests
   + Cleanup structure
+
+  ______
+
+  ## UI
+  + Technician, Doctor and Caregiver dashboards
+  

@@ -37,7 +37,7 @@
         $statement->bindParam(':user_role', $user_role, PDO::PARAM_STR, 10);
         $statement->bindParam(':special_id', $special_id, PDO::PARAM_STR, 20);
         $statement->execute();
-        header("Location: http://localhost/project_medica/pages/Landing_Page.php");
+        header("Location: ../pages/Landing_Page.php");
         die();
     } else {
         echo "User already exists";

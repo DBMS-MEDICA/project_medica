@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION["Patient"]) || isset($_SESSION["Doctor"]) || isset($_SESSION["Caregiver"])) {
+    header("Location: ./dashboard.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +21,7 @@
 
 <body style="height: 1080px;min-height: 1080px;">
     <div class="login-clean" style="margin-top: auto;">
-        <form method="post" action="http://localhost/project_medica/signin.php" style="width: 699px;height: 700px;min-width: 400px;">
+        <form method="post" action="../api/signin.php" style="width: 699px;height: 700px;min-width: 400px;">
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><img src="assets/img/Untitled1.png" style="width: 150px;"></div>
             <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username"></div>
@@ -24,7 +33,7 @@
             </div>
             <div class="form-row" style="padding: 10px;">
                 <div class="col-xl-4 offset-xl-0">
-                    <div class="form-check"><input value="Patient" class="form-check-input" type="radio" name="user_role" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Patient</label></div>
+                    <div class="form-check"><input required value="Patient" class="form-check-input" type="radio" name="user_role" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Patient</label></div>
                 </div>
                 <div class="col-xl-4">
                     <div class="form-check"><input value="Doctor" class="form-check-input" type="radio" name="user_role" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Doctor</label></div>

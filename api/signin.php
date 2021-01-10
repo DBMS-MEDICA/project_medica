@@ -9,10 +9,10 @@
 <body>
     <?php
 
-    include_once("./classes/db/DB_CONNECTION.class.php");
-    include_once("./classes/entities/Patient.class.php");
-    include_once("./classes/entities/Doctor.class.php");
-    include_once("./classes/entities/Caregiver.class.php");
+    include_once("../classes/db/DB_CONNECTION.class.php");
+    include_once("../classes/entities/Patient.class.php");
+    include_once("../classes/entities/Doctor.class.php");
+    include_once("../classes/entities/Caregiver.class.php");
     session_start();
 
 
@@ -69,7 +69,7 @@
 
     if (checkIfUserExists($conn, $username) == true) {
         validate($conn, $username, $password, $user_role);
-        header("Location: http://localhost/project_medica/static/patient_dashboard.php");
+        header("Location: ../static/dashboard.php");
         // die();
     } else {
         echo "Invalid Credentials";

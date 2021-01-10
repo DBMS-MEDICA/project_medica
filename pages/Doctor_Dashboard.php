@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,23 @@
     <!-- Google icon font -->
     <link href="resources/material-icons.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet"  type="text/css" href="resources/fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="resources/fontawesome-free-5.13.0-web/css/all.css">
     <!-- Minified CSS -->
     <link rel="stylesheet" href="resources/materialize.min.css">
     <!-- Customized CSS -->
     <link rel="stylesheet" href="resources/stylesheet.css">
     <style>
-       
+
     </style>
 </head>
+
 <body class="french-pink">
 
     <!-- NavBar & SideNav-->
     <div id="navigation">
         <div class="navbar-fixed" id="navbar">
-            <nav class="nav-wraper white"><!-- transparent vs white -->
+            <nav class="nav-wraper white">
+                <!-- transparent vs white -->
                 <div class="container">
                     <div class="brand-logo">
                         <span class="custom-logo"></span>
@@ -54,26 +57,26 @@
         </div>
         <ul class="sidenav" id="sidenav">
             <div>
-            <li><a href="#" class="waves-effect">Home</a></li>
-            <li><a href="#" class="waves-effect">About</a></li>
-            <li><a href="#" class="waves-effect">Contact us</a></li>
-            <li><a href="#" class="waves-effect">Profile</a></li>
-            <li><a href="#" class="waves-effect">Sign out</a></li>
-            <li>
-                <a href="#" class="waves-effect dropdown-trigger" data-target="activities-dropdown">Activities</a>
-                <ul id='activities-dropdown' class='dropdown-content'>
-                    <li><a href="#!"><i class="fas fa-ambulance maastricht-blue-text"></i>Ambulance</a></li>
-                    <li><a href="#!"><i class="fas fa-pills maya-blue-text"></i>Pharmacy</a></li>
-                    <li><a href="#!"><i class="fas fa-first-aid red-text text-darken-2"></i>Emergency</a></li>
-                    <li><a href="#!"><i class="fas fa-file-medical grey-text text-darken-2"></i>New Prescription</a></li>
-                    <li><a href="#!"><i class="fas fa-handshake blue-text"></i>My Consultancies</a></li>
-                    <li><a href="#!"><i class="fas fa-notes-medical lime-text text-darken-4"></i>Patient's Medical History</a></li>
-                    <li><a href="#!"><i class="fas fa-id-card green-text text-darken-1"></i>Medical Card</a></li>
-                    <li><a href="#!"><i class="material-icons tiny french-pink-text text-lighten-2 left">update</i>Update My Routine</a></li>
-                    <li><a href="#!"><i class="fas fa-sync aquamarine-text"></i>Update Profile</a></li>
-                    
-                </ul>
-            </li>
+                <li><a href="#" class="waves-effect">Home</a></li>
+                <li><a href="#" class="waves-effect">About</a></li>
+                <li><a href="#" class="waves-effect">Contact us</a></li>
+                <li><a href="#" class="waves-effect">Profile</a></li>
+                <li><a href="#" class="waves-effect">Sign out</a></li>
+                <li>
+                    <a href="#" class="waves-effect dropdown-trigger" data-target="activities-dropdown">Activities</a>
+                    <ul id='activities-dropdown' class='dropdown-content'>
+                        <li><a href="#!"><i class="fas fa-ambulance maastricht-blue-text"></i>Ambulance</a></li>
+                        <li><a href="#!"><i class="fas fa-pills maya-blue-text"></i>Pharmacy</a></li>
+                        <li><a href="#!"><i class="fas fa-first-aid red-text text-darken-2"></i>Emergency</a></li>
+                        <li><a href="#!"><i class="fas fa-file-medical grey-text text-darken-2"></i>New Prescription</a></li>
+                        <li><a href="#!"><i class="fas fa-handshake blue-text"></i>My Consultancies</a></li>
+                        <li><a href="#!"><i class="fas fa-notes-medical lime-text text-darken-4"></i>Patient's Medical History</a></li>
+                        <li><a href="#!"><i class="fas fa-id-card green-text text-darken-1"></i>Medical Card</a></li>
+                        <li><a href="#!"><i class="material-icons tiny french-pink-text text-lighten-2 left">update</i>Update My Routine</a></li>
+                        <li><a href="#!"><i class="fas fa-sync aquamarine-text"></i>Update Profile</a></li>
+
+                    </ul>
+                </li>
         </ul>
     </div>
 
@@ -188,7 +191,7 @@
 
     <!-- Cards -->
     <div class="container row">
-        
+
         <div class="col s12">
             <ul class="collapsible white z-depth-3">
                 <li>
@@ -293,7 +296,7 @@
                     </div>
                     <div class="collapsible-body">
                         <form id="createNewPrescription">
-                            
+
                             <div class="col xl5 l6 m7 s12 input-field">
                                 <input type="text" name="Patient_id" id="Patient_id"></input>
                                 <label for="Patient_id">
@@ -305,7 +308,7 @@
                                 <div class="col s12">
                                     <ul class="tabs">
                                         <li class="tab col s4">
-                                            <a href="#notes-tab"  class="active">
+                                            <a href="#notes-tab" class="active">
                                                 <i class="fas fa-pen"></i>
                                                 Notes
                                             </a>
@@ -386,7 +389,7 @@
                                                         <i class="fas fa-notes-medical left" style="font-size: 1.5rem !important"></i>
                                                         Prescribed Tests
                                                     </label>
-                                                </div>     
+                                                </div>
                                             </div>
                                         </li>
                                     </ul>
@@ -414,12 +417,11 @@
 
     <!-- Minified JavaScript -->
     <script src="resources/materialize.min.js"></script>
-    
+
     <!-- Utilities -->
     <script src="resources/Utilities.js"></script>
 
     <script>
-
         document.getElementById('createNewPrescription').addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -453,28 +455,26 @@
         })
 
         document.getElementById('new-medicine').addEventListener('keypress', (e) => {
-            if(e.key === 'Enter' || e.key ==='\n')
+            if (e.key === 'Enter' || e.key === '\n')
                 addListElem();
         })
 
         let listIndex = 1;
 
-        function addListElem()
-        {
-            
+        function addListElem() {
+
             let inputField = document.getElementById('new-medicine')
             let val = inputField.value;
-            if(val == "")
-            {
+            if (val == "") {
                 console.log("Empty field");
                 return;
             }
 
             let Div = document.getElementById('display-medicine-list');
-            let ButtonId="rmv-btn-" + listIndex++;
+            let ButtonId = "rmv-btn-" + listIndex++;
 
-            Div.innerHTML+= 
-            `
+            Div.innerHTML +=
+                `
             <li class="row blue-text valign-wrapper">
                 <div class="col s10 no-padding">
                     <i class="fas fa-pills maya-blue-text small left"></i>
@@ -488,46 +488,50 @@
             </li>
             `;
 
-            inputField.value="";
+            inputField.value = "";
             console.log("Item added");
 
         }
 
-        function removeListElem(ButtonId)
-        {
-            setTimeout(function(){
+        function removeListElem(ButtonId) {
+            setTimeout(function() {
                 let List = document.getElementById(ButtonId).parentElement.parentElement;
-                List.className="hide";
-                List.innerHTML="";
+                //List.className = "hide";
+                List.innerHTML = "";
                 console.log('Item removed');
             }, 505);
         }
 
-        function clrPrescription()
-        {
-            
-            if(confirm("The prescription form will now be cleared."))
-            {
-                
+        function clrPrescription() {
+
+            if (confirm("The prescription form will now be cleared.")) {
+
                 //Clearing notes
-                document.getElementById('notes').value="";
-                
+                document.getElementById('notes').value = "";
+
                 //Clearing medicine
-                document.getElementById('display-medicine-list').innerHTML="";
-                listIndex=1;
-                
+                document.getElementById('display-medicine-list').innerHTML = "";
+                listIndex = 1;
+
                 //Clearing prescribed tests
                 let Option = document.getElementsByTagName('OPTION');
-                for(let i=0; i < Option.length; i++)
-                    if(Option[i].selected)
+                for (let i = 0; i < Option.length; i++)
+                    if (Option[i].selected)
                         Option[i].selected = false;
-                
+
                 //Display toast
-                M.toast({html: 'The form is cleared.', displayLength: 1500, classes: 'rounded', inDuration:0, outDuration:0});
-            
+                M.toast({
+                    html: 'The form is cleared.',
+                    displayLength: 1500,
+                    classes: 'rounded',
+                    inDuration: 0,
+                    outDuration: 0
+                });
+
             }
-            
+
         }
     </script>
 </body>
+
 </html>

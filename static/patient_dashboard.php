@@ -1,18 +1,5 @@
-<?php
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html>
-
-<?php
-include_once("../classes/entities/Patient.class.php");
-if (isset($_SESSION["Patient"])) {
-    $current_patient = json_decode($_SESSION["Patient"]);
-} else
-
-?>
 
 <head>
     <meta charset="utf-8">
@@ -28,11 +15,11 @@ if (isset($_SESSION["Patient"])) {
         <div class="container"><a class="navbar-brand" href="#">Project Medica</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Medical History</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Browse Doctors</a></li>
+                    <li class="nav-item" role="presentation"><button class="btn btn-danger" type="button"><a class="text-white" href="#">Emergency</a></button></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">More</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item text-danger" role="presentation" href="../api/logout.php">Logout</a></div>
                     </li>
                 </ul>
             </div>
@@ -47,9 +34,10 @@ if (isset($_SESSION["Patient"])) {
                             <div class="row">
                                 <div class="col-xl-2"><img class="rounded-circle border border-dark" src="assets/img/blank-profile-picture-973460_1280.jpg" style="width: 150px;"></div>
                                 <div class="col-auto" style="font-size: 5px;padding-top: 40px;">
-                                    <h4>Welcome <?php echo $current_patient->patient_name ?> </h4>
+                                    <h4>Welcome USERNAME</h4>
                                     <h4 style="font-weight: normal;font-size: 18px;">You have ? appointments this week</h4>
                                 </div>
+                                <div class="col offset-xl-3 text-center d-xl-flex align-self-center justify-content-xl-center align-items-xl-center"><a href="./new_appointment.php"><button class="btn btn-primary border rounded" type="button" style="width: 188px;height: 57px;font-size: 18px;">+New Appointment</button></a></div>
                             </div>
                         </div>
                     </div>
@@ -105,7 +93,7 @@ if (isset($_SESSION["Patient"])) {
                         </div>
                     </div>
                 </div>
-                <div style="padding: 10px;"><a class="btn btn-primary" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-2" href="#collapse-2" role="button">My Prescriptions</a>
+                <div style="padding: 10px;"><a class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button">My Prescriptions</a>
                     <div class="collapse" id="collapse-2">
                         <div class="row" style="margin: 10px -15px;">
                             <div class="col">

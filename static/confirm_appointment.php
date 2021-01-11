@@ -14,7 +14,7 @@ include "./helpers/Patient/confirm_appointment_helper.inc.php";
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>New Appointment</title>
+    <title>Confirm Appointment</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -29,7 +29,7 @@ include "./helpers/Patient/confirm_appointment_helper.inc.php";
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item text-danger" role="presentation" href="../api/logout.php">Logout</a></div>
                     </li>
                 </ul>
             </div>

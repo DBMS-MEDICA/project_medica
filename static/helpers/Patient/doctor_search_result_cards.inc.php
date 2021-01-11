@@ -8,7 +8,7 @@ function generate_chamber($chamber)
 
 
 
-function generate_doctor_card($doctor_name, $specialization, $designation, $hospital_name, $qualification, $rating, $chambers)
+function generate_doctor_card($i, $doctor_name, $specialization, $designation, $qualification, $rating, $chambers)
 {
 
     //$chambers is an array of Chambers
@@ -21,7 +21,7 @@ function generate_doctor_card($doctor_name, $specialization, $designation, $hosp
                     <div class="col-xl-3"><img class="rounded-circle border border-dark" src="assets/img/blank-profile-picture-973460_1280.jpg" style="width: 150px;"></div>
                     <div class="col">
                         <h6 class="text-muted mb-2">' . $doctor_name . ' </h6>
-                        <p> ' . $specialization . '<br>' . $designation .  ', ' . $hospital_name . ' </p>
+                        <p> ' . $specialization . '<br>' . $designation . ' </p>
                         <p>' . $qualification .  '</p>
                     </div>
                     <div class="col-xl-3" style="padding: 0px;padding-right: 15px;">

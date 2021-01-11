@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include "./helpers/Patient/doctor_search_result_cards.inc.php";
 
 ?>
 
@@ -108,9 +108,18 @@ session_start();
                     <div class="card-body bg-light shadow-sm">
                         <h4 class="text-dark card-title" style="padding: 20px;color: #ffffff;font-size: 30px;">Search Results</h4>
                         <?php
+                        include_once("../classes/db/DB_CONNECTION.class.php");
+                        $db = new DB_CONNECTION("medica_admin", "medica_admin");
                         if (isset($_SESSION['Doctor_Search_Results'])) {
-                        }
+                            $array_results = json_decode($_SESSION['Doctor_Search_Results']);
+                            for ($i = 0; $i < count($array_results); $i++) {
+                                $stmt = $db->prepare("select c.chamber_ID, c.fee, c.day, c.opening_time, c.closing_time, c.REGION, c.MAP_URL from doctor d, D_C r, Chamber c where d.DOCTOR_ID=r.DOCTOR_ID AND c.CHAMBER_ID=r.CHAMBER_ID AND d.DOCTOR_ID='" . $array_results[$i]->doctor_id . "'");
+                                $stmt->execute();
+                                $chambers = $stmt->fetchAll();
 
+                                generate_doctor_card($i, $array_results[$i]->doctor_name, $array_results[$i]->specialization, $array_results[$i]->designation, $array_results[$i]->qualification, $array_results[$i]->rating, $chambers);
+                            }
+                        }
 
                         ?>
 

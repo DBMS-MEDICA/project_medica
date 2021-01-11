@@ -47,6 +47,8 @@
                                      <h4>Welcome <?php echo $patient->patient_name ?></h4>
                                      <h4 style="font-weight: normal;font-size: 18px;">You have <?php
                                                                                                 //  NEED TO FETCH COUNT OF UPCOMING APPOINTMENTS, CONSIDER PROCESSING APPOINTMENT COUNT BEFORE PAGE RENDER
+                                                                                                echo count($appointments)
+
                                                                                                 ?> appointments this week</h4>
                                  </div>
                                  <div class="col offset-xl-3 text-center d-xl-flex align-self-center justify-content-xl-center align-items-xl-center"><a href="./new_appointment.php"><button class="btn btn-primary border rounded" type="button" style="width: 188px;height: 57px;font-size: 18px;">+New Appointment</button></a></div>
@@ -66,10 +68,13 @@
 
                                          <!-- APPOINTMENT CARD GENERATION -->
 
+                                         <?php
+                                            for ($i = 0; $i < count($appointments); $i++) {
+                                                generate_appointment_card($appointments[$i]->doctor_name, $appointments[$i]->region, $appointments[$i]->sl_no, $appointments[$i]->eta);
+                                            }
 
-                                         <?php generate_appointment_card("Hoo3", "Mohammadpur", 18, "18:00, 6-Mar-2022") ?>
-                                         <?php generate_appointment_card("Hoo1", "Dhanmondi", 12, "12:30, 11-Jan-2022") ?>
-                                         <?php generate_appointment_card("Hoo2", "Shyamoli", 5, "11:40, 1-Feb-2022") ?>
+
+                                            ?>
                                      </div>
                                  </div>
                              </div>
@@ -86,9 +91,11 @@
 
 
                                          <!-- PRESCRIPTION CARD GENERATION -->
-
-                                         <?php generate_prescription_card("DocName", "Azmasol, Meth, Quizole, Water", "Patient is probably dead inside", "Vibe check"); ?>
-                                         <?php generate_prescription_card("AnotherDocName", "Cocaine, Paracetamol, Oxycodone, Water 2", "Patient needs to chill lmao", "death, idk"); ?>
+                                         <?php
+                                            for ($i = 0; $i < count($prescriptions); $i++) {
+                                                generate_prescription_card($prescriptions[$i]->doctor_name, $prescriptions[$i]->medicine, $prescriptions[$i]->notes, $prescriptions[$i]->prescribed_tests);
+                                            }
+                                            ?>
                                      </div>
                                  </div>
                              </div>

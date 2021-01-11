@@ -1,10 +1,16 @@
+<?php
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>PatientDashboard (2) (2)</title>
+    <title>PatientDashboard_2</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -27,50 +33,87 @@
     </nav>
     <div class="container" style="padding: 30px;width: 1351px;">
         <div class="row">
-            <div class="col-xl-12">
-                <div class="card shadow-sm">
-                    <div class="card-body bg-light shadow-sm">
-                        <h4 class="text-dark card-title" style="padding: 20px;color: #ffffff;font-size: 30px;">Appointment Info</h4>
-                        <div class="row">
-                            <div class="col">
-                                <div class="card" style="margin: 15px;">
-                                    <div class="card-body shadow">
-                                        <div class="row">
-                                            <div class="col-xl-4"><img class="rounded-circle border border-dark" src="assets/img/blank-profile-picture-973460_1280.jpg" style="width: 150px;"></div>
-                                            <div class="col">
-                                                <h6 class="text-muted mb-2">$Doctor_name</h6>
-                                                <div style="padding-top: 15px;">
-                                                    <p>$Specialization<br>$Designation, $Hospital_Name</p>
-                                                </div>
-                                            </div>
-                                        </div>
+
+            <div class="col-xl-4">
+                <form action="../api/search_doctors.php" method="POST">
+                    <div class="card shadow-sm">
+                        <div class="card-body bg-light shadow-sm">
+                            <div class="row">
+                                <div class="col-xl-8 d-xl-flex justify-content-xl-center align-items-xl-center">
+                                    <h4 class="text-center text-dark d-xl-flex justify-content-xl-center align-items-xl-start" style="padding: 20px;color: #ffffff;font-size: 25px;">Filter results</h4>
+                                </div>
+                                <div class="col-xl-4 text-center d-xl-flex justify-content-xl-center align-items-xl-center"><button class="btn btn-primary d-xl-flex align-items-xl-start" type="submit">Filter</button></div>
+                            </div>
+                            <div class="card" style="margin: 15px;">
+                                <div class="card-body shadow">
+                                    <h6 class="text-muted card-subtitle mb-2">Search by name</h6><input class="border rounded" name="doc_name" type="text" style="width: 100%;">
+                                </div>
+                            </div>
+                            <div class="card" style="margin: 15px;">
+                                <div class="card-body shadow">
+                                    <h6 class="text-muted card-subtitle mb-2">Designation</h6>
+                                    <div style="padding-top: 15px;"><select name="doc_designation">
+                                            <option value="undefined">Select Designation</option>
+                                            <option value="Professor">Professor</option>
+                                            <option value="Associate Professor">Associate Professor</option>
+                                            <option value="14">Assistant Professor</option>
+                                            <option value="Senior Consultant">Senior Consultant</option>
+                                            <option value="Consultant">Consultant</option>
+                                            <option value="Medical Officer">Medical Officer</option>
+                                        </select></div>
+                                </div>
+                            </div>
+                            <div class="card" style="margin: 15px;">
+                                <div class="card-body shadow">
+                                    <h6 class="text-muted card-subtitle mb-2">Specialization</h6>
+                                    <div style="padding-top: 15px;">
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Cardiologist" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Cardiologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Dermatologist" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Dermatologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Endocrinologist" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Endocrinologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Gastrologist" id="formCheck-4"><label class="form-check-label" for="formCheck-4">Gastrologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Gynecologist" id="formCheck-5"><label class="form-check-label" for="formCheck-5">Gynecologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Hepatologist" id="formCheck-6"><label class="form-check-label" for="formCheck-6">Hepatologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Nephrologist" id="formCheck-7"><label class="form-check-label" for="formCheck-7">Nephrologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Neurologist" id="formCheck-8"><label class="form-check-label" for="formCheck-8">Neurologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Oncologist" id="formCheck-9"><label class="form-check-label" for="formCheck-9">Oncologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Opthalmologist" id="formCheck-10"><label class="form-check-label" for="formCheck-10">Opthalmologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Otoloaryngologist" id="formCheck-11"><label class="form-check-label" for="formCheck-11">Otoloaryngologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Pathologist" id="formCheck-12"><label class="form-check-label" for="formCheck-12">Pathologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Psychiatrist" id="formCheck-13"><label class="form-check-label" for="formCheck-13">Psychiatrist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Pulmonologist" id="formCheck-14"><label class="form-check-label" for="formCheck-14">Pulmonologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Radiologist" id="formCheck-15"><label class="form-check-label" for="formCheck-15">Radiologist</label></div>
+                                        <div class="form-check"><input name="doc_specialization" class="form-check-input" type="radio" value="Urologist" id="formCheck-16"><label class="form-check-label" for="formCheck-16">Urologist</label></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4">
-                                <div class="card" style="margin: 15px;">
-                                    <div class="card-body shadow">
-                                        <h6 class="text-muted card-subtitle mb-2">Appointment Info</h6>
-                                        <div style="padding-top: 15px;">
-                                            <p>Location:&nbsp;</p><select>
-                                                <option value="undefined">Select Location</option>
-                                                <option value="Area 1">Area 1</option>
-                                                <option value="Area 2">Area 2</option>
-                                                <option value="Area 3">Area 3</option>
-                                            </select>
-                                        </div>
-                                        <div style="padding-top: 15px;">
-                                            <p>Date:&nbsp;</p><input placeholder="dd-mmm-yyyy" value="" type="date">
-                                        </div>
-                                        <div style="padding-top: 15px;">
-                                            <p>Serial no: $Serial_no<br>Fee: $Fee<br></p>
-                                        </div>
-                                        <div class="text-center" style="padding-top: 15px;"><button class="btn btn-primary text-center" type="button" style="width: 139.891px;">Confirm</button></div>
-                                        <div class="text-center" style="padding-top: 15px;"><button class="btn btn-danger text-center" type="button" style="width: 139.891px;">Cancel</button></div>
+                            <div class="card" style="margin: 15px;">
+                                <div class="card-body shadow">
+                                    <h6 class="text-muted card-subtitle mb-2">Min. Rating</h6>
+                                    <div style="padding-top: 15px;">
+                                        <div class="form-check"><input class="form-check-input" name="doc_rating" type="radio" id="formCheck-21" value="5" name="Rating"><label class="form-check-label" for="formCheck-21">★★★★★</label></div>
+                                        <div class="form-check"><input class="form-check-input" name="doc_rating" type="radio" id="formCheck-20" name="Rating" value="4"><label class="form-check-label" for="formCheck-20">★★★★</label></div>
+                                        <div class="form-check"><input class="form-check-input" name="doc_rating" type="radio" id="formCheck-19" name="Rating" value="3"><label class="form-check-label" for="formCheck-19">★★★</label></div>
+                                        <div class="form-check"><input class="form-check-input" name="doc_rating" type="radio" id="formCheck-17" name="Rating" value="2"><label class="form-check-label" for="formCheck-17">★★</label></div>
+                                        <div class="form-check"><input class="form-check-input" name="doc_rating" type="radio" id="formCheck-18" name="Rating" value="1"><label class="form-check-label" for="formCheck-18">★</label></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-xl-8">
+                <div class="card shadow-sm">
+                    <div class="card-body bg-light shadow-sm">
+                        <h4 class="text-dark card-title" style="padding: 20px;color: #ffffff;font-size: 30px;">Search Results</h4>
+                        <?php
+                        if (isset($_SESSION['Doctor_Search_Results'])) {
+                        }
+
+
+                        ?>
+
                     </div>
                 </div>
             </div>

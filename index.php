@@ -1,3 +1,16 @@
+<?php
+include_once("./classes/db/DB_CONNECTION.class.php");
+$db = new DB_CONNECTION("medica_admin", "medica_admin");
+$stmt = $db->prepare("select * from tabs");
+$stmt->execute();
+while ($row = $stmt->fetch()) {
+    var_dump($row);
+}
+
+
+
+?>
+
 <html lang="en">
 
 <head>

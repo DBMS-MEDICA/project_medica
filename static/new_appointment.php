@@ -117,7 +117,7 @@ include "./helpers/Patient/doctor_search_result_cards.inc.php";
                                 $stmt->execute();
                                 $chambers = $stmt->fetchAll();
 
-                                generate_doctor_card($i, $array_results[$i]->doctor_name, $array_results[$i]->specialization, $array_results[$i]->designation, $array_results[$i]->qualification, $array_results[$i]->rating, $chambers);
+                                generate_doctor_card($array_results[$i]->doctor_id, $array_results[$i]->doctor_name, $array_results[$i]->specialization, $array_results[$i]->designation, $array_results[$i]->qualification, $array_results[$i]->rating, $chambers);
                             }
                         }
 

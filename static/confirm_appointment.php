@@ -2,8 +2,6 @@
 include_once("../classes/entities/Doctor.class.php");
 include_once("../classes/entities/Chamber.class.php");
 include "./helpers/Patient/confirm_appointment_populator.inc.php";
-include "./helpers/Patient/confirm_appointment_helper.inc.php";
-
 
 ?>
 
@@ -50,16 +48,17 @@ include "./helpers/Patient/confirm_appointment_helper.inc.php";
                                             <div class="col">
                                                 <h6 class="text-muted mb-2"><?php echo $current_doctor->doctor_name ?></h6>
                                                 <div style="padding-top: 15px;">
-                                                    <p><?php echo $current_doctor->specialization ?><br><?php echo $current_doctor->designation ?>, <?php echo $hospital_name ?></p>
+                                                    <!-- TODO: ADD HOSPITAL NAME -->
+                                                    <p><?php echo $current_doctor->specialization ?><br><?php echo $current_doctor->designation ?></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-xl-4">
                                 <form action="../api/confirm_appointment.php" method="POST">
+                                    <input hidden name="doctor_id" value="<?php echo $current_doctor->doctor_id ?>"></input>
                                     <div class="card" style="margin: 15px;">
                                         <div class="card-body shadow">
                                             <h6 class="text-muted card-subtitle mb-2">Appointment Info</h6>
@@ -69,10 +68,12 @@ include "./helpers/Patient/confirm_appointment_helper.inc.php";
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="inputGroupSelect01">Choose Chamber</label>
                                                     </div>
-                                                    <select class="custom-select" id="inputGroupSelect01">
+
+                                                    <select required name="chamber_id" class="custom-select" id="inputGroupSelect01">
                                                         <?php
+
                                                         for ($i = 0; $i < count($chambers); $i++) {
-                                                            echo '<option value="' . $i . '">' . $chambers[$i]->location . '</option>';
+                                                            echo '<option name="chamber_id" value="' . $chambers[$i]->chamber_id . '">' . $chambers[$i]->region . '</option>';
                                                         }
 
                                                         ?>
@@ -80,7 +81,7 @@ include "./helpers/Patient/confirm_appointment_helper.inc.php";
                                                 </div>
                                             </div>
                                             <div style="padding-top: 15px;">
-                                                <p>Date:&nbsp;</p><input placeholder="dd-mmm-yyyy" value="" type="date">
+                                                <p>Date:&nbsp;</p><input required placeholder="dd-mm-yyyy" value="" type="date" name="selected_date"></input>
                                             </div>
                                             <!-- <div style="padding-top: 15px;">
                                                 <p>Serial no: $Serial_no<br>Fee: $Fee<br></p>

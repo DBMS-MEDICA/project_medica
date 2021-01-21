@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION["Patient"]) || isset($_SESSION["Doctor"]) || isset($_SESSION["Caregiver"])) {
+if (isset($_SESSION["Patient"]) || isset($_SESSION["Doctor"]) || isset($_SESSION["Caregiver"]) || isset($_SESSION["Caregiver"]) || isset($_SESSION["Hospital"]) || isset($_SESSION["Technician"])) {
     header("Location: ./dashboard.php");
 }
 
@@ -13,7 +13,7 @@ if (isset($_SESSION["Patient"]) || isset($_SESSION["Doctor"]) || isset($_SESSION
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Untitled</title>
+    <title>Sign in</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -40,6 +40,12 @@ if (isset($_SESSION["Patient"]) || isset($_SESSION["Doctor"]) || isset($_SESSION
                 </div>
                 <div class="col-xl-4">
                     <div class="form-check"><input value="Caregiver" class="form-check-input" type="radio" name="user_role" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Caregiver</label></div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="form-check"><input value="Technician" class="form-check-input" type="radio" name="user_role" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Technician</label></div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="form-check"><input value="Hospital" class="form-check-input" type="radio" name="user_role" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Hospital</label></div>
                 </div>
             </div>
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>

@@ -9,6 +9,8 @@ class Caregiver
     public $gender;
     public $area;
     public $rating;
+    public $starting_date;
+    public $ending_date;
 
     function __construct($fields)
     {
@@ -20,6 +22,8 @@ class Caregiver
         $this->gender = $fields->GENDER;
         $this->area = $fields->AREA;
         $this->rating = $fields->RATING;
+        $this->starting_date = $fields->STARTING_DATE;
+        $this->ending_date = $fields->ENDING_DATE;
 
         // var_dump($this);
     }

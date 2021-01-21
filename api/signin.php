@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html lang="en">
 
 <head>
@@ -13,7 +14,8 @@
     include_once("../classes/entities/Patient.class.php");
     include_once("../classes/entities/Doctor.class.php");
     include_once("../classes/entities/Caregiver.class.php");
-    session_start();
+    include_once("../classes/entities/Hospital.class.php");
+    include_once("../classes/entities/Technician.class.php");
 
 
     function checkIfUserExists($conn, $username)
@@ -51,6 +53,12 @@
                 } elseif ($user_role == "Caregiver") {
                     $current_user = new Caregiver($row);
                     $_SESSION['Caregiver'] = json_encode($current_user);
+                } elseif ($user_role == "Technician") {
+                    $current_user = new Technician($row);
+                    $_SESSION['Technician'] = json_encode($current_user);
+                } elseif ($user_role == "Hospital") {
+                    $current_user = new Hospital($row);
+                    $_SESSION['Hospital'] = json_encode($current_user);
                 }
             } else {
                 echo "Critical error -> " . $user_role . " not found.";

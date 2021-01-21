@@ -18,5 +18,7 @@ class Hospital
         $this->address = $fields->ADDRESS;
         $this->phone = $fields->PHONE;
         $this->map_url = $fields->MAP_URL;
+
+        var_dump($this);
     }
 }

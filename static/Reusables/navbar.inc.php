@@ -8,16 +8,9 @@ function navbar($user_type)
                         <div class="collapse navbar-collapse" id="navcol-1">
                             <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item" role="presentation"><a class="nav-link" href="./dashboard.php">Dashboard</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="./appointment_history.php">Appointment History</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="./caregiver_history">Caregiver History</a></li>
                                 <li class="nav-item" role="presentation"><a class="nav-link" href="./patient_reports.php">My Reports</a></li>
-                                <li class="nav-item dropdown">
-                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">More</a>
-                                    <div class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item" role="presentation" href="./patient_profile.php">Update Info</a>
-                                        <a class="dropdown-item text-danger" role="presentation" href="../api/logout.php">Logout</a>
-                                    </div
-                                </li>
+                                <li class="nav-item" role="presentation"><a class="nav-link text-danger" href="../api/logout.php">Logout</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -28,19 +21,9 @@ function navbar($user_type)
                     <div class="container"><a class="navbar-brand" href="./dashboard.php">Project Medica</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navcol-1">
                             <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="./dashboard.php">Dashboard</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="./check_medical_history.php">Check Medical History</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="./create_prescription.php">Create A Prescription</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="./create_chamber.php">New Chamber</a></li>
-                                <li class="nav-item" role="presentation"><button class="btn btn-danger" type="button"><a class="text-white" href="#">Emergency</a></button></li>
-                                <li class="nav-item dropdown">
-                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">More</a>
-                                    <div class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item" role="presentation" href="./doctor_update chamber.php">Update Chamber</a>
-                                        <a class="dropdown-item" role="presentation" href="./doctor_profile.php">Update Info</a>
-                                        <a class="dropdown-item text-danger" role="presentation" href="../api/logout.php">Logout</a>
-                                    </div>
-                                </li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="./dashboard.php">Dashboard</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link text-danger" href="../api/logout.php">Logout</a></li>
+
                             </ul>
                         </div>
                     </div>

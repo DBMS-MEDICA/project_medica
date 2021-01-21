@@ -12,7 +12,9 @@ class Report
     public $impression;
     public $file;
     public $prescription;
-    public $technician;
+    public $technician_id;
+    public $report_date;
+
 
     function __construct($fields)
     {
@@ -23,7 +25,8 @@ class Report
         $this->impression = $fields->IMPRESSION;
         $this->file = $fields->FILE;
         $this->prescription = $fields->PRESCRIPTION;
-        $this->technician = $fields->TECHNICIAN;
+        $this->technician_id = $fields->TECHNICIAN_ID;
+        $report_date = $fields->REPORT_DATE;
 
         // var_dump($this);
     }

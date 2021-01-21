@@ -25,12 +25,7 @@
          <div class="container"><a class="navbar-brand" href="#">Project Medica</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
              <div class="collapse navbar-collapse" id="navcol-1">
                  <ul class="nav navbar-nav ml-auto">
-                     <li class="nav-item" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
-                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Second Item</a></li>
-                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Third Item</a></li>
-                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
-                         <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item text-danger" role="presentation" href="../api/logout.php">Logout</a></div>
-                     </li>
+                     <li class="nav-item" role="presentation"><a class="nav-link text-danger" href="../api/logout.php">Logout</a></li>
                  </ul>
              </div>
          </div>

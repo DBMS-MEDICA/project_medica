@@ -26,7 +26,7 @@ $doctor = json_decode($_SESSION["Doctor"]);
                                 <h4 style="font-weight: normal;font-size: 18px;"><?php echo $doctor->specialization ?></h4>
                                 <h4 style="font-weight: normal;font-size: 18px;"><?php echo $hospital_name ?></h4>
                             </div>
-                            <div class="col offset-xl-3 text-center d-xl-flex align-self-center justify-content-xl-center align-items-xl-center"><a href="./create_prescription.php"><button class="btn btn-primary border rounded" type="button" style="width: 188px;height: 57px;font-size: 18px;">+New Prescription</button></a></div>
+                            <div class="col offset-xl-3 text-center d-xl-flex align-self-center justify-content-xl-center align-items-xl-center"></div>
                         </div>
                     </div>
                 </div>

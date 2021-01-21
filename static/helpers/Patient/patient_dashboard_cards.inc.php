@@ -1,6 +1,6 @@
 <?php
 
-function generate_appointment_card($doctor_name, $region, $sl_no, $eta)
+function generate_appointment_card($doctor_name, $region, $sl_no, $eta, $time)
 {
     echo '
     <div class="card" style="margin: 15px;">
@@ -8,9 +8,9 @@ function generate_appointment_card($doctor_name, $region, $sl_no, $eta)
         <h4 class="card-title" style="font-weight: 500;font-size: 20px;">' . $doctor_name . '</h4>
         <h6 class="text-muted card-subtitle mb-2"></h6>
         <div style="padding-top: 15px;">
-            <p>Chamber location:  ' .  $region  . '  </p>
-            <p>Serial no.:  ' .  $sl_no  . '  </p>
-            <p>ETA:  ' .  $eta  . '  </p>
+            <p><b>Chamber location: </b>' .  $region  . '  </p>
+            <p><b>Serial no.: </b>' .  $sl_no  . '  </p>
+            <p><b>ETA: </b>' .  $eta  . ' <strong>~</strong> ' . $time . ' </p>
         </div>
     </div>
     </div>

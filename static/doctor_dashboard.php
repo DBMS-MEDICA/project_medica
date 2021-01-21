@@ -48,7 +48,7 @@
                                      <h4 style="font-weight: normal;font-size: 18px;"><?php echo $doctor->specialization ?></h4>
                                      <h4 style="font-weight: normal;font-size: 18px;"><?php echo $hospital_name ?></h4>
                                  </div>
-                                 <div class="col offset-xl-3 text-center d-xl-flex align-self-center justify-content-xl-center align-items-xl-center"><button class="btn btn-primary border rounded" type="button" style="width: 188px;height: 57px;font-size: 18px;">+New Prescription</button></div>
+                                 <div class="col offset-xl-3 text-center d-xl-flex align-self-center justify-content-xl-center align-items-xl-center"><a href="./create_prescription.php"><button class="btn btn-primary border rounded" type="button" style="width: 188px;height: 57px;font-size: 18px;">+New Prescription</button></a></div>
                              </div>
                          </div>
                      </div>
@@ -64,9 +64,10 @@
 
                                     // TODAY'S STUFF GENERATED HERE:
 
-                                    generate_chamber_card("92715", "Shyamoli", "11:30am", "5:00pm", "www.bongocat.com");
-                                    generate_chamber_card("16625", "Dhanmondi", "11:30am", "5:00pm", "www.uuid.com");
-                                    generate_chamber_card("56825", "Mirpur", "11:30am", "5:00pm", "www.abcdef.com");
+                                    for ($i = 0; $i < count($today); $i++) {
+                                        generate_chamber_card($today[$i]->CHAMBER_ID, $today[$i]->REGION, $today[$i]->OPENING_TIME, $today[$i]->CLOSING_TIME, $today[$i]->MAP_URL);
+                                    }
+
                                     ?>
 
                              </div>
@@ -78,10 +79,11 @@
                                  <h4 class="text-dark card-title" style="padding: 20px;color: #ffffff;font-size: 30px;">Tomorrow's schedule</h4>
                                  <?php
 
-                                    // TODAY'S STUFF GENERATED HERE:
-                                    generate_chamber_card("56825", "Mirpur", "11:30am", "5:00pm", "www.abcdef.com");
-                                    generate_chamber_card("16625", "Dhanmondi", "11:30am", "5:00pm", "www.uuid.com");
-                                    generate_chamber_card("92715", "Shyamoli", "11:30am", "5:00pm", "www.bongocat.com");
+                                    // TOMORROW'S STUFF GENERATED HERE:
+                                    for ($i = 0; $i < count($tomorrow); $i++) {
+                                        generate_chamber_card($tomorrow[$i]->CHAMBER_ID, $tomorrow[$i]->REGION, $tomorrow[$i]->OPENING_TIME, $tomorrow[$i]->CLOSING_TIME, $tomorrow[$i]->MAP_URL);
+                                    }
+
                                     ?>
                              </div>
                          </div>

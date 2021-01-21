@@ -1,6 +1,6 @@
 <?php
-include_once("./Patient.class.php");
-include_once("./Doctor.class.php");
+include_once("../classes/entities/Patient.class.php");
+include_once("../classes/entities/Doctor.class.php");
 
 class Prescription
 {

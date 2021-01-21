@@ -3,6 +3,8 @@
     include_once("../classes/entities/Patient.class.php");
     include "./helpers/Patient/patient_populator.inc.php";
     include "./helpers/Patient/patient_dashboard_cards.inc.php";
+    include "../static/Reusables/head.inc.php";
+    include "../static/Reusables/navbar.inc.php";
 
     $patient = json_decode($_SESSION["Patient"]);
 
@@ -11,30 +13,10 @@
  <!DOCTYPE html>
  <html>
 
- <head>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-     <title>Patient Dashboard</title>
-     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-     <link rel="stylesheet" href="assets/css/styles.min.css">
- </head>
+ <?php head("Patient Dashboard") ?>
 
  <body>
-     <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-         <div class="container"><a class="navbar-brand" href="#">Project Medica</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-             <div class="collapse navbar-collapse" id="navcol-1">
-                 <ul class="nav navbar-nav ml-auto">
-                     <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Medical History</a></li>
-                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Browse Doctors</a></li>
-                     <li class="nav-item" role="presentation"><button class="btn btn-danger" type="button"><a class="text-white" href="#">Emergency</a></button></li>
-                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">More</a>
-                         <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item text-danger" role="presentation" href="../api/logout.php">Logout</a></div>
-                     </li>
-                 </ul>
-             </div>
-         </div>
-     </nav>
+     <?php navbar("Patient") ?>
      <div class="container" style="padding: 30px;">
          <div class="col">
              <div class="row" style="margin-top: 10px;margin-bottom: 10px;">
@@ -70,7 +52,7 @@
 
                                          <?php
                                             for ($i = 0; $i < count($appointments); $i++) {
-                                                generate_appointment_card($appointments[$i]->doctor_name, $appointments[$i]->region, $appointments[$i]->sl_no, $appointments[$i]->eta);
+                                                generate_appointment_card($appointments[$i]->DOCTOR_NAME, $appointments[$i]->REGION, $appointments[$i]->SL_NO, $appointments[$i]->ETA, $appointments[$i]->OPENING_TIME);
                                             }
 
 
@@ -93,7 +75,7 @@
                                          <!-- PRESCRIPTION CARD GENERATION -->
                                          <?php
                                             for ($i = 0; $i < count($prescriptions); $i++) {
-                                                generate_prescription_card($prescriptions[$i]->doctor_name, $prescriptions[$i]->medicine, $prescriptions[$i]->notes, $prescriptions[$i]->prescribed_tests);
+                                                generate_prescription_card($prescriptions[$i]->DOCTOR_NAME, $prescriptions[$i]->MEDICINE, $prescriptions[$i]->NOTES, $prescriptions[$i]->PRESCRIBED_TESTS);
                                             }
                                             ?>
                                      </div>

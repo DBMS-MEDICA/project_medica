@@ -234,17 +234,6 @@ $stmt->execute();
 - Blockchain integration for immutable medical records
 - Migrate to modern frameworks (Laravel, Django) with ORM support
 
-## 👥 Team Members
-
-**Group B-2**
-
-- **Dhrubo Barua** (201814015) - iamdhrubobarua@gmail.com
-- **Md. Rokonuzzaman Reza** (201814021) - rokonuzzamanreza@gmail.com
-- **Ishraq Hasan** (201814023) - ishraq10199@gmail.com
-- **Kazi Tasnim Rahman** (201814044) - tasnim.naomi@gmail.com
-- **Muhammad Munswarim Khan** (201814052) - munswarim@gmail.com
-- **Shaqran Bin Saleh** (201814059) - shaqran39@gmail.com
-
 ## 📚 Academic Context
 
 This project was completed as the capstone project for **CSE-402: System Analysis, Design & Development Sessional**. The project demonstrates practical application of:
@@ -278,3 +267,4 @@ For questions or collaboration opportunities, please reach out to the team membe
 ---
 
 **Note**: This is an academic project developed for educational purposes. For commercial deployment, significant security hardening, comprehensive testing, migration to modern frameworks with ORM support, and compliance with healthcare regulations (HIPAA, etc.) would be necessary.
+
